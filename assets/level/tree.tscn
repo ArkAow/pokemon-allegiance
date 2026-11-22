@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1eywhyp2vqs3"]
+
+[ext_resource type="Texture2D" uid="uid://bn2x8qhu1p67c" path="res://assets/tileset/nature/tree1.png" id="1_0n0i4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6rtvw"]
+size = Vector2(32, 32)
+
+[node name="Tree" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0n0i4")
+centered = false
+offset = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_6rtvw")
