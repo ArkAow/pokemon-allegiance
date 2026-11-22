@@ -1,0 +1,584 @@
+{
+  "normal": {
+    "name": "Normal",
+    "color": "#a8a878",
+    "synergy": "Robustesse",
+    "scope": "members",
+    "breakpoints": [
+      2,
+      4,
+      6
+    ],
+    "tiers": [
+      {
+        "mods": {
+          "hp_pct": 0.1
+        },
+        "desc": "+10% PV max"
+      },
+      {
+        "mods": {
+          "hp_pct": 0.25,
+          "dmg_reduction": 0.05
+        },
+        "desc": "+25% PV max, -5% dégâts subis"
+      },
+      {
+        "mods": {
+          "hp_pct": 0.4,
+          "dmg_reduction": 0.1
+        },
+        "desc": "+40% PV max, -10% dégâts subis"
+      }
+    ]
+  },
+  "fire": {
+    "name": "Feu",
+    "color": "#f08030",
+    "synergy": "Brasier",
+    "scope": "members",
+    "breakpoints": [
+      2,
+      4,
+      6
+    ],
+    "tiers": [
+      {
+        "mods": {
+          "burn_on_hit": 0.015
+        },
+        "desc": "brûlure 1.5% PV max/s (3s)"
+      },
+      {
+        "mods": {
+          "burn_on_hit": 0.025,
+          "atk_pct": 0.1,
+          "speAtk_pct": 0.1
+        },
+        "desc": "brûlure 2.5% PV max/s (3s), +10% Attaque, +10% Att. Spé"
+      },
+      {
+        "mods": {
+          "burn_on_hit": 0.04,
+          "atk_pct": 0.25,
+          "speAtk_pct": 0.25
+        },
+        "desc": "brûlure 4% PV max/s (3s), +25% Attaque, +25% Att. Spé"
+      }
+    ]
+  },
+  "water": {
+    "name": "Eau",
+    "color": "#6890f0",
+    "synergy": "Marée",
+    "scope": "members",
+    "breakpoints": [
+      2,
+      4,
+      6
+    ],
+    "tiers": [
+      {
+        "mods": {
+          "energy_per_sec": 2
+        },
+        "desc": "+2 énergie/s"
+      },
+      {
+        "mods": {
+          "energy_per_sec": 4,
+          "shield_start": 0.1
+        },
+        "desc": "+4 énergie/s, bouclier de départ 10% PV max"
+      },
+      {
+        "mods": {
+          "energy_per_sec": 7,
+          "shield_start": 0.2
+        },
+        "desc": "+7 énergie/s, bouclier de départ 20% PV max"
+      }
+    ]
+  },
+  "electric": {
+    "name": "Électrik",
+    "color": "#f8d030",
+    "synergy": "Surcharge",
+    "scope": "members",
+    "breakpoints": [
+      2,
+      4,
+      6
+    ],
+    "tiers": [
+      {
+        "mods": {
+          "aspd_pct": 0.15
+        },
+        "desc": "+15% vitesse d'attaque"
+      },
+      {
+        "mods": {
+          "aspd_pct": 0.3
+        },
+        "desc": "+30% vitesse d'attaque"
+      },
+      {
+        "mods": {
+          "aspd_pct": 0.55
+        },
+        "desc": "+55% vitesse d'attaque"
+      }
+    ]
+  },
+  "grass": {
+    "name": "Plante",
+    "color": "#78c850",
+    "synergy": "Flore",
+    "scope": "members",
+    "breakpoints": [
+      2,
+      4,
+      6
+    ],
+    "tiers": [
+      {
+        "mods": {
+          "regen_pct": 0.015
+        },
+        "desc": "régén. 1.5% PV max/s"
+      },
+      {
+        "mods": {
+          "regen_pct": 0.03,
+          "def_pct": 0.1
+        },
+        "desc": "régén. 3% PV max/s, +10% Défense"
+      },
+      {
+        "mods": {
+          "regen_pct": 0.05,
+          "def_pct": 0.2
+        },
+        "desc": "régén. 5% PV max/s, +20% Défense"
+      }
+    ]
+  },
+  "ice": {
+    "name": "Glace",
+    "color": "#98d8d8",
+    "synergy": "Givre",
+    "scope": "members",
+    "breakpoints": [
+      2,
+      4,
+      6
+    ],
+    "tiers": [
+      {
+        "mods": {
+          "slow_on_hit": 0.2
+        },
+        "desc": "ralentit de 20% (2s)"
+      },
+      {
+        "mods": {
+          "slow_on_hit": 0.3,
+          "def_pct": 0.1
+        },
+        "desc": "ralentit de 30% (2s), +10% Défense"
+      },
+      {
+        "mods": {
+          "slow_on_hit": 0.4,
+          "def_pct": 0.25
+        },
+        "desc": "ralentit de 40% (2s), +25% Défense"
+      }
+    ]
+  },
+  "fighting": {
+    "name": "Combat",
+    "color": "#c03028",
+    "synergy": "Cran",
+    "scope": "members",
+    "breakpoints": [
+      2,
+      4,
+      6
+    ],
+    "tiers": [
+      {
+        "mods": {
+          "atk_pct": 0.15
+        },
+        "desc": "+15% Attaque"
+      },
+      {
+        "mods": {
+          "atk_pct": 0.3,
+          "lifesteal": 0.1
+        },
+        "desc": "+30% Attaque, vol de vie 10%"
+      },
+      {
+        "mods": {
+          "atk_pct": 0.5,
+          "lifesteal": 0.2
+        },
+        "desc": "+50% Attaque, vol de vie 20%"
+      }
+    ]
+  },
+  "poison": {
+    "name": "Poison",
+    "color": "#a040a0",
+    "synergy": "Toxines",
+    "scope": "members",
+    "breakpoints": [
+      2,
+      4,
+      6
+    ],
+    "tiers": [
+      {
+        "mods": {
+          "poison_on_hit": 0.02
+        },
+        "desc": "poison 2% PV max/s (5s)"
+      },
+      {
+        "mods": {
+          "poison_on_hit": 0.035
+        },
+        "desc": "poison 3.5% PV max/s (5s)"
+      },
+      {
+        "mods": {
+          "poison_on_hit": 0.05,
+          "speAtk_pct": 0.15
+        },
+        "desc": "poison 5% PV max/s (5s), +15% Att. Spé"
+      }
+    ]
+  },
+  "ground": {
+    "name": "Sol",
+    "color": "#e0c068",
+    "synergy": "Cuirasse",
+    "scope": "members",
+    "breakpoints": [
+      2,
+      4,
+      6
+    ],
+    "tiers": [
+      {
+        "mods": {
+          "def_pct": 0.2
+        },
+        "desc": "+20% Défense"
+      },
+      {
+        "mods": {
+          "def_pct": 0.4,
+          "speDef_pct": 0.2
+        },
+        "desc": "+40% Défense, +20% Déf. Spé"
+      },
+      {
+        "mods": {
+          "def_pct": 0.7,
+          "speDef_pct": 0.4
+        },
+        "desc": "+70% Défense, +40% Déf. Spé"
+      }
+    ]
+  },
+  "flying": {
+    "name": "Vol",
+    "color": "#a890f0",
+    "synergy": "Vent",
+    "scope": "members",
+    "breakpoints": [
+      2,
+      4,
+      6
+    ],
+    "tiers": [
+      {
+        "mods": {
+          "dodge": 0.1
+        },
+        "desc": "10% esquive"
+      },
+      {
+        "mods": {
+          "dodge": 0.2,
+          "move_pct": 0.1
+        },
+        "desc": "20% esquive, +10% vitesse de déplacement"
+      },
+      {
+        "mods": {
+          "dodge": 0.35,
+          "move_pct": 0.2
+        },
+        "desc": "35% esquive, +20% vitesse de déplacement"
+      }
+    ]
+  },
+  "psychic": {
+    "name": "Psy",
+    "color": "#f85888",
+    "synergy": "Esprit",
+    "scope": "members",
+    "breakpoints": [
+      2,
+      4,
+      6
+    ],
+    "tiers": [
+      {
+        "mods": {
+          "energy_start": 20
+        },
+        "desc": "+20 énergie de départ"
+      },
+      {
+        "mods": {
+          "energy_start": 40,
+          "ability_power_pct": 0.2
+        },
+        "desc": "+40 énergie de départ, +20% puissance des capacités"
+      },
+      {
+        "mods": {
+          "energy_start": 60,
+          "ability_power_pct": 0.4
+        },
+        "desc": "+60 énergie de départ, +40% puissance des capacités"
+      }
+    ]
+  },
+  "bug": {
+    "name": "Insecte",
+    "color": "#a8b820",
+    "synergy": "Essaim",
+    "scope": "members",
+    "breakpoints": [
+      2,
+      4,
+      6
+    ],
+    "tiers": [
+      {
+        "mods": {
+          "crit_chance": 0.1
+        },
+        "desc": "10% chances de critique"
+      },
+      {
+        "mods": {
+          "crit_chance": 0.2,
+          "aspd_pct": 0.1
+        },
+        "desc": "20% chances de critique, +10% vitesse d'attaque"
+      },
+      {
+        "mods": {
+          "crit_chance": 0.35,
+          "aspd_pct": 0.2
+        },
+        "desc": "35% chances de critique, +20% vitesse d'attaque"
+      }
+    ]
+  },
+  "rock": {
+    "name": "Roche",
+    "color": "#b8a038",
+    "synergy": "Éboulis",
+    "scope": "members",
+    "breakpoints": [
+      2,
+      4,
+      6
+    ],
+    "tiers": [
+      {
+        "mods": {
+          "shield_start": 0.15
+        },
+        "desc": "bouclier de départ 15% PV max"
+      },
+      {
+        "mods": {
+          "shield_start": 0.3
+        },
+        "desc": "bouclier de départ 30% PV max"
+      },
+      {
+        "mods": {
+          "shield_start": 0.5,
+          "def_pct": 0.15
+        },
+        "desc": "bouclier de départ 50% PV max, +15% Défense"
+      }
+    ]
+  },
+  "ghost": {
+    "name": "Spectre",
+    "color": "#705898",
+    "synergy": "Hantise",
+    "scope": "members",
+    "breakpoints": [
+      2,
+      4,
+      6
+    ],
+    "tiers": [
+      {
+        "mods": {
+          "true_damage_pct": 0.015
+        },
+        "desc": "+1.5% PV max en dégâts bruts/coup"
+      },
+      {
+        "mods": {
+          "true_damage_pct": 0.03
+        },
+        "desc": "+3% PV max en dégâts bruts/coup"
+      },
+      {
+        "mods": {
+          "true_damage_pct": 0.05
+        },
+        "desc": "+5% PV max en dégâts bruts/coup"
+      }
+    ]
+  },
+  "dragon": {
+    "name": "Dragon",
+    "color": "#7038f8",
+    "synergy": "Majesté",
+    "scope": "members",
+    "breakpoints": [
+      2,
+      4
+    ],
+    "tiers": [
+      {
+        "mods": {
+          "atk_pct": 0.2,
+          "speAtk_pct": 0.2
+        },
+        "desc": "+20% Attaque, +20% Att. Spé"
+      },
+      {
+        "mods": {
+          "atk_pct": 0.4,
+          "speAtk_pct": 0.4,
+          "hp_pct": 0.1
+        },
+        "desc": "+40% Attaque, +40% Att. Spé, +10% PV max"
+      }
+    ]
+  },
+  "dark": {
+    "name": "Ténèbres",
+    "color": "#705848",
+    "synergy": "Embuscade",
+    "scope": "members",
+    "breakpoints": [
+      2,
+      4,
+      6
+    ],
+    "tiers": [
+      {
+        "mods": {
+          "crit_chance": 0.15
+        },
+        "desc": "15% chances de critique"
+      },
+      {
+        "mods": {
+          "crit_chance": 0.3,
+          "crit_mult": 0.25
+        },
+        "desc": "30% chances de critique, +25% dégâts critiques"
+      },
+      {
+        "mods": {
+          "crit_chance": 0.45,
+          "crit_mult": 0.5
+        },
+        "desc": "45% chances de critique, +50% dégâts critiques"
+      }
+    ]
+  },
+  "steel": {
+    "name": "Acier",
+    "color": "#b8b8d0",
+    "synergy": "Armure",
+    "scope": "members",
+    "breakpoints": [
+      2,
+      4,
+      6
+    ],
+    "tiers": [
+      {
+        "mods": {
+          "dmg_reduction": 0.08
+        },
+        "desc": "-8% dégâts subis"
+      },
+      {
+        "mods": {
+          "dmg_reduction": 0.15
+        },
+        "desc": "-15% dégâts subis"
+      },
+      {
+        "mods": {
+          "dmg_reduction": 0.25
+        },
+        "desc": "-25% dégâts subis"
+      }
+    ]
+  },
+  "fairy": {
+    "name": "Fée",
+    "color": "#ee99ac",
+    "synergy": "Bénédiction",
+    "scope": "team",
+    "breakpoints": [
+      2,
+      4,
+      6
+    ],
+    "tiers": [
+      {
+        "mods": {
+          "speDef_pct": 0.15
+        },
+        "desc": "+15% Déf. Spé"
+      },
+      {
+        "mods": {
+          "speDef_pct": 0.3,
+          "regen_pct": 0.01
+        },
+        "desc": "+30% Déf. Spé, régén. 1% PV max/s"
+      },
+      {
+        "mods": {
+          "speDef_pct": 0.5,
+          "regen_pct": 0.02
+        },
+        "desc": "+50% Déf. Spé, régén. 2% PV max/s"
+      }
+    ]
+  }
+}

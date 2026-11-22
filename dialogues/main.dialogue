@@ -1,0 +1,102 @@
+~ start
+npc: [[Bonjour|Coucou|Salut]], voyageur !
+npc: Les temps sont rudes. Ici, plus de règles : c'est la mêlée.
+npc: Appuie sur Tab pour placer tes Pokémon sur le terrain et choisir tes 3 objets de dresseur avant de t'aventurer dans les hautes herbes.
+=> END
+
+~ gift
+if not Game.has_flag("gift_berries")
+	npc: Tiens, voyageur, de quoi renforcer tes bêtes.
+	do Game.give_item("oran_berry", 2)
+	do Game.give_item("choice_scarf", 1)
+	do Game.give_trainer_item("ultra_ball", 2)
+	do Game.give_trainer_item("super_potion", 2)
+	do Game.give_trainer_item("rally_cry", 1)
+	do Game.set_flag("gift_berries")
+	npc: Équipe les objets depuis le menu Tab. Les balls et les sorts se choisissent aussi là-bas : 3 emplacements pour le combat !
+else
+	npc: Je n'ai plus rien à t'offrir. Bonne route !
+=> END
+
+~ trainer
+if Game.has_flag("beat_tutorial_rival")
+	npc: Bien joué... Ta formation était meilleure que la mienne.
+	=> END
+npc: Hé ! Tu crois que ta troupe peut battre la mienne ?
+- Je relève le défi
+	npc: En garde !
+	do Game.request_battle("tutorial_rival")
+	=> END
+- Plus tard
+	npc: Poltron.
+	=> END
+
+~ elder
+npc: Autrefois, les Pokémon se battaient sans règle, tous ensemble, au cœur de la mêlée.
+npc: Place-les bien : les types qui s'accordent se renforcent mutuellement. Deux Plantes, quatre Plantes... chaque palier compte.
+=> END
+
+~ merchant
+if not Game.has_flag("merchant_gift")
+	npc: Un nouveau visage ! Prends ces balls, tu en auras besoin pour étoffer ta troupe.
+	do Game.give_trainer_item("poke_ball", 5)
+	do Game.give_trainer_item("great_ball", 2)
+	do Game.give_trainer_item("potion", 3)
+	do Game.set_flag("merchant_gift")
+	npc: Lance une ball sur un Pokémon sauvage blessé : c'est là que ça marche le mieux.
+else
+	npc: Reviens me voir quand tu auras capturé du beau monde.
+=> END
+
+~ villager
+npc: Il paraît que la forêt, à l'est de la route, abrite des Pokémon bien plus coriaces.
+=> END
+
+~ villager2
+npc: N'oublie pas : les Pokémon à distance se placent à l'arrière, ceux de mêlée à l'avant.
+=> END
+
+~ scout
+if Game.has_flag("beat_route_scout")
+	npc: Tu as de bons réflexes. La route est à toi.
+	=> END
+npc: Halte ! Personne ne passe sans m'avoir montré sa valeur.
+- Je relève le défi
+	npc: Voyons ce que tu vaux !
+	do Game.request_battle("route_scout")
+	=> END
+- Plus tard
+	npc: Reviens quand tu seras prêt.
+	=> END
+
+~ route_guard
+npc: La route s'enfonce vers la forêt. Les Pokémon y sont plus forts, prépare tes sorts de dresseur.
+=> END
+
+~ forest_guard
+npc: Fais attention, voyageur. Au fond de la forêt, un chasseur défie tous ceux qui passent.
+=> END
+
+~ hunter
+if Game.has_flag("beat_forest_hunter")
+	npc: Hm. Tu chasses mieux que moi.
+	=> END
+npc: Cette forêt est mon terrain de chasse. Prouve-moi que tu y as ta place.
+- Je relève le défi
+	npc: Alors montre-moi tes crocs !
+	do Game.request_battle("forest_hunter")
+	=> END
+- Plus tard
+	npc: Prudence...
+	=> END
+
+~ gift_forest
+if not Game.has_flag("hermit_gift")
+	npc: Peu de gens viennent jusqu'ici. Prends ça, tu en feras meilleur usage que moi.
+	do Game.give_trainer_item("super_potion", 2)
+	do Game.give_trainer_item("ultra_ball", 3)
+	do Game.give_trainer_item("swap_whistle", 1)
+	do Game.set_flag("hermit_gift")
+else
+	npc: Que la forêt te soit douce.
+=> END

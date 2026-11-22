@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://effects/scripts/fx_burst.gd" id="1_fx"]
+
+[node name="SmokeBomb" type="Node2D"]
+script = ExtResource("1_fx")
+style = "smoke"
+color = Color(0.6, 0.65, 0.7, 1)
+default_radius = 110.0

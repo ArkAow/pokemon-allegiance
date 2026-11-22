@@ -1,7 +1,7 @@
 @icon("./assets/responses_menu.svg")
 
-## A [Container] for dialogue responses provided by [b]Dialogue Manager[/b].
-class_name DialogueResponsesMenu extends Container
+## A VBoxContainer for dialogue responses provided by [b]Dialogue Manager[/b].
+class_name DialogueResponsesMenu extends VBoxContainer
 
 
 ## Emitted when a response is selected.
@@ -14,10 +14,8 @@ signal response_selected(response)
 ## The action for accepting a response (is possibly overridden by parent dialogue balloon).
 @export var next_action: StringName = &""
 
-## The list of dialogue responses.
+# The list of dialogue responses.
 var responses: Array = []:
-	get:
-		return responses
 	set(value):
 		responses = value
 
@@ -66,23 +64,9 @@ func _ready() -> void:
 		response_template.hide()
 
 
-## Get the selectable items in the menu.
-func get_menu_items() -> Array:
-	var items: Array = []
-	for child in get_children():
-		if not child.visible: continue
-		if "Disallowed" in child.name: continue
-		items.append(child)
-
-	return items
-
-
-## [b]DEPRECATED[/b]. Do not use.
+# This is deprecated.
 func set_responses(next_responses: Array) -> void:
 	self.responses = next_responses
-
-
-#region Internal
 
 
 # Prepare the menu for keyboard and mouse navigation.
@@ -116,9 +100,18 @@ func _configure_focus() -> void:
 	items[0].grab_focus()
 
 
-#endregion
+## Get the selectable items in the menu.
+func get_menu_items() -> Array:
+	var items: Array = []
+	for child in get_children():
+		if not child.visible: continue
+		if "Disallowed" in child.name: continue
+		items.append(child)
 
-#region Signals
+	return items
+
+
+### Signals
 
 
 func _on_response_mouse_entered(item: Control) -> void:
@@ -130,12 +123,9 @@ func _on_response_mouse_entered(item: Control) -> void:
 func _on_response_gui_input(event: InputEvent, item: Control, response) -> void:
 	if "Disallowed" in item.name: return
 
+	get_viewport().set_input_as_handled()
+
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
-		get_viewport().set_input_as_handled()
 		response_selected.emit(response)
 	elif event.is_action_pressed(&"ui_accept" if next_action.is_empty() else next_action) and item in get_menu_items():
-		get_viewport().set_input_as_handled()
 		response_selected.emit(response)
-
-
-#endregion

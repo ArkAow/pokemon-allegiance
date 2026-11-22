@@ -1,0 +1,603 @@
+{
+  "vine_whip": {
+    "name": "Fouet Lianes",
+    "cost": 60,
+    "desc": "Fouette les 3 ennemis les plus proches (140% de la puissance).",
+    "cast_time": 0.6,
+    "steps": [
+      {
+        "pattern": "MULTI_NEAREST",
+        "count": 3,
+        "fx": "res://effects/scenes/vine_whip.tscn",
+        "effects": [
+          {
+            "type": "DAMAGE",
+            "ratio": 1.4
+          }
+        ]
+      }
+    ]
+  },
+  "synthesis": {
+    "name": "Synthèse",
+    "cost": 70,
+    "desc": "Soigne 30% des PV max du lanceur et 25% de ceux de l'allié le plus blessé.",
+    "cast_time": 0.6,
+    "steps": [
+      {
+        "pattern": "SELF",
+        "fx": "res://effects/scenes/heal_aura.tscn",
+        "effects": [
+          {
+            "type": "HEAL",
+            "pct": 0.3
+          }
+        ]
+      },
+      {
+        "pattern": "ALLY_WEAKEST",
+        "delay": 0.2,
+        "fx": "res://effects/scenes/heal_aura.tscn",
+        "effects": [
+          {
+            "type": "HEAL",
+            "pct": 0.25
+          }
+        ]
+      }
+    ]
+  },
+  "solar_beam": {
+    "name": "Lance-Soleil",
+    "cost": 100,
+    "desc": "Rayon traversant tous les ennemis en ligne (260%).",
+    "cast_time": 0.8,
+    "steps": [
+      {
+        "pattern": "BEAM",
+        "width": 0.7,
+        "length": 2.5,
+        "fx": "res://effects/scenes/solar_beam.tscn",
+        "effects": [
+          {
+            "type": "DAMAGE",
+            "ratio": 2.6
+          }
+        ]
+      }
+    ]
+  },
+  "fire_fang": {
+    "name": "Crocs Feu",
+    "cost": 50,
+    "desc": "Mord la cible (180%) et la brûle (3% PV max/s pendant 4s).",
+    "cast_time": 0.6,
+    "steps": [
+      {
+        "pattern": "SINGLE_TARGET",
+        "fx": "res://effects/scenes/fire_bite.tscn",
+        "effects": [
+          {
+            "type": "DAMAGE",
+            "ratio": 1.8
+          },
+          {
+            "type": "BURN",
+            "pct": 0.03,
+            "dur": 4.0
+          }
+        ]
+      }
+    ]
+  },
+  "fire_spin": {
+    "name": "Danse Flamme",
+    "cost": 70,
+    "desc": "Tourbillon de feu autour du lanceur (130%) qui brûle les ennemis proches.",
+    "cast_time": 0.6,
+    "steps": [
+      {
+        "pattern": "CIRCLE_SELF",
+        "radius": 1.6,
+        "fx": "res://effects/scenes/fire_ring.tscn",
+        "effects": [
+          {
+            "type": "DAMAGE",
+            "ratio": 1.3
+          },
+          {
+            "type": "BURN",
+            "pct": 0.025,
+            "dur": 4.0
+          }
+        ]
+      }
+    ]
+  },
+  "blast_burn": {
+    "name": "Rafale Feu",
+    "cost": 110,
+    "desc": "Un météore de flammes s'abat sur la cible (400%), 200% aux voisins.",
+    "cast_time": 0.8,
+    "steps": [
+      {
+        "pattern": "CIRCLE_TARGET",
+        "radius": 1.3,
+        "fx": "res://effects/scenes/meteor_fire.tscn",
+        "effects": [
+          {
+            "type": "DAMAGE",
+            "ratio": 2.0,
+            "main_mult": 2.0
+          }
+        ]
+      }
+    ]
+  },
+  "withdraw": {
+    "name": "Repli",
+    "cost": 50,
+    "desc": "Bouclier de 40% PV max et +50% de défenses pendant 4s.",
+    "cast_time": 0.6,
+    "steps": [
+      {
+        "pattern": "SELF",
+        "fx": "res://effects/scenes/shield_dome.tscn",
+        "effects": [
+          {
+            "type": "SHIELD",
+            "pct": 0.4,
+            "dur": 4.0
+          },
+          {
+            "type": "BUFF",
+            "mods": {
+              "def_pct": 0.5,
+              "speDef_pct": 0.5
+            },
+            "dur": 4.0
+          }
+        ]
+      }
+    ]
+  },
+  "tidal_wave": {
+    "name": "Raz-de-Marée",
+    "cost": 70,
+    "desc": "Vague autour du lanceur (100%) : repousse et ralentit.",
+    "cast_time": 0.6,
+    "steps": [
+      {
+        "pattern": "CIRCLE_SELF",
+        "radius": 2.2,
+        "fx": "res://effects/scenes/tidal_wave.tscn",
+        "effects": [
+          {
+            "type": "DAMAGE",
+            "ratio": 1.0
+          },
+          {
+            "type": "SLOW",
+            "amount": 0.35,
+            "dur": 2.5
+          },
+          {
+            "type": "PUSH",
+            "cells": 1.2
+          }
+        ]
+      }
+    ]
+  },
+  "barrage": {
+    "name": "Barrage Hydro",
+    "cost": 100,
+    "desc": "Tire 5 jets d'eau sur des ennemis au hasard (110% chacun).",
+    "cast_time": 0.6,
+    "steps": [
+      {
+        "pattern": "MULTI_RANDOM",
+        "count": 5,
+        "stagger": 0.12,
+        "fx": "res://effects/scenes/water_jet.tscn",
+        "effects": [
+          {
+            "type": "DAMAGE",
+            "ratio": 1.1
+          }
+        ]
+      }
+    ]
+  },
+  "quick_attack": {
+    "name": "Vive-Attaque",
+    "cost": 40,
+    "desc": "Fond sur la cible (160%) et gagne +40% de vitesse d'attaque (3s).",
+    "cast_time": 0.4,
+    "steps": [
+      {
+        "pattern": "DASH_STRIKE",
+        "fx": "res://effects/scenes/dash_trail.tscn",
+        "effects": [
+          {
+            "type": "DAMAGE",
+            "ratio": 1.6
+          },
+          {
+            "type": "BUFF",
+            "on": "self",
+            "mods": {
+              "aspd_pct": 0.4
+            },
+            "dur": 3.0
+          }
+        ]
+      }
+    ]
+  },
+  "tailwind": {
+    "name": "Vent Arrière",
+    "cost": 60,
+    "desc": "Alliés proches : +25% vitesse d'attaque et de déplacement (5s). Frappe 2 ennemis (120%).",
+    "cast_time": 0.6,
+    "steps": [
+      {
+        "pattern": "ALLIES_AREA",
+        "radius": 3.0,
+        "fx": "res://effects/scenes/wind_aura.tscn",
+        "effects": [
+          {
+            "type": "BUFF",
+            "mods": {
+              "aspd_pct": 0.25,
+              "move_pct": 0.25
+            },
+            "dur": 5.0
+          }
+        ]
+      },
+      {
+        "pattern": "MULTI_NEAREST",
+        "count": 2,
+        "delay": 0.2,
+        "fx": "res://effects/scenes/air_slash.tscn",
+        "effects": [
+          {
+            "type": "DAMAGE",
+            "ratio": 1.2
+          }
+        ]
+      }
+    ]
+  },
+  "chain_lightning": {
+    "name": "Éclair en Chaîne",
+    "cost": 60,
+    "desc": "Foudre rebondissant sur 4 ennemis (150%, -25% à chaque rebond).",
+    "cast_time": 0.6,
+    "steps": [
+      {
+        "pattern": "CHAIN",
+        "bounces": 3,
+        "falloff": 0.75,
+        "radius": 2.2,
+        "fx": "res://effects/scenes/lightning_chain.tscn",
+        "effects": [
+          {
+            "type": "DAMAGE",
+            "ratio": 1.5
+          }
+        ]
+      }
+    ]
+  },
+  "thunder": {
+    "name": "Fatal-Foudre",
+    "cost": 90,
+    "desc": "La foudre frappe la cible (300%) et l'étourdit 1,5s ; 120% aux voisins.",
+    "cast_time": 0.8,
+    "steps": [
+      {
+        "pattern": "CIRCLE_TARGET",
+        "radius": 1.3,
+        "fx": "res://effects/scenes/thunderbolt.tscn",
+        "effects": [
+          {
+            "type": "DAMAGE",
+            "ratio": 1.2,
+            "main_mult": 2.5
+          },
+          {
+            "type": "STUN",
+            "dur": 1.5,
+            "on": "main"
+          }
+        ]
+      }
+    ]
+  },
+  "sleep_powder": {
+    "name": "Poudre Dodo",
+    "cost": 70,
+    "desc": "Endort les 2 ennemis les plus proches pendant 2,5s.",
+    "cast_time": 0.6,
+    "steps": [
+      {
+        "pattern": "MULTI_NEAREST",
+        "count": 2,
+        "fx": "res://effects/scenes/sleep_cloud.tscn",
+        "effects": [
+          {
+            "type": "STUN",
+            "dur": 2.5
+          }
+        ]
+      }
+    ]
+  },
+  "spore_cloud": {
+    "name": "Nuage Toxique",
+    "cost": 80,
+    "desc": "Nuage persistant (6s) sur la cible : poison et ralentissement.",
+    "cast_time": 0.6,
+    "steps": [
+      {
+        "pattern": "ZONE",
+        "radius": 1.6,
+        "duration": 6.0,
+        "tick": 1.0,
+        "fx": "res://effects/scenes/poison_cloud.tscn",
+        "effects": [
+          {
+            "type": "POISON",
+            "pct": 0.05,
+            "dur": 2.0
+          },
+          {
+            "type": "SLOW",
+            "amount": 0.25,
+            "dur": 1.5
+          }
+        ]
+      }
+    ]
+  },
+  "teleport": {
+    "name": "Téléport",
+    "cost": 55,
+    "desc": "Disparaît 1,5s (intouchable), se soigne de 20% et réapparaît ailleurs.",
+    "cast_time": 0.5,
+    "steps": [
+      {
+        "pattern": "TELEPORT",
+        "fx": "res://effects/scenes/teleport.tscn",
+        "effects": [
+          {
+            "type": "INVULNERABLE",
+            "dur": 1.5
+          },
+          {
+            "type": "HEAL",
+            "pct": 0.2
+          }
+        ]
+      }
+    ]
+  },
+  "mind_drain": {
+    "name": "Psyko Siphon",
+    "cost": 80,
+    "desc": "Draine 50 énergie de la cible et lui inflige 200% (+6% par énergie drainée).",
+    "cast_anim": "shoot",
+    "cast_time": 0.6,
+    "steps": [
+      {
+        "pattern": "SINGLE_TARGET",
+        "fx": "res://effects/scenes/psychic_wave.tscn",
+        "effects": [
+          {
+            "type": "DRAIN_ENERGY",
+            "amount": 50
+          },
+          {
+            "type": "DAMAGE",
+            "ratio": 2.0,
+            "bonus_per_drained": 0.06
+          }
+        ]
+      }
+    ]
+  },
+  "karate_chop": {
+    "name": "Poing Karaté",
+    "cost": 45,
+    "desc": "Frappe la cible (220%), x1,6 si elle a moins de 50% de PV.",
+    "cast_time": 0.6,
+    "steps": [
+      {
+        "pattern": "SINGLE_TARGET",
+        "fx": "res://effects/scenes/punch.tscn",
+        "effects": [
+          {
+            "type": "DAMAGE",
+            "ratio": 2.2,
+            "execute_below": 0.5,
+            "execute_mult": 1.6
+          }
+        ]
+      }
+    ]
+  },
+  "rollout": {
+    "name": "Roulade",
+    "cost": 50,
+    "desc": "Fonce sur la cible (200%), la repousse et gagne +30% de défenses (3s).",
+    "cast_time": 0.4,
+    "steps": [
+      {
+        "pattern": "DASH_STRIKE",
+        "color": "#b8a038",
+        "fx": "res://effects/scenes/dash_trail.tscn",
+        "effects": [
+          {
+            "type": "DAMAGE",
+            "ratio": 2.0
+          },
+          {
+            "type": "PUSH",
+            "cells": 0.8
+          },
+          {
+            "type": "BUFF",
+            "on": "self",
+            "mods": {
+              "def_pct": 0.3,
+              "speDef_pct": 0.3
+            },
+            "dur": 3.0
+          }
+        ]
+      }
+    ]
+  },
+  "quake": {
+    "name": "Séisme",
+    "cost": 80,
+    "desc": "Secoue le sol : tous les ennemis proches subissent 120% et sont étourdis 1s.",
+    "cast_time": 0.6,
+    "steps": [
+      {
+        "pattern": "CIRCLE_SELF",
+        "radius": 2.2,
+        "fx": "res://effects/scenes/quake.tscn",
+        "effects": [
+          {
+            "type": "DAMAGE",
+            "ratio": 1.2
+          },
+          {
+            "type": "STUN",
+            "dur": 1.0
+          }
+        ]
+      }
+    ]
+  },
+  "hypnosis": {
+    "name": "Hypnose",
+    "cost": 55,
+    "desc": "Endort la cible 2,5s et lui inflige 50%.",
+    "cast_anim": "shoot",
+    "cast_time": 0.6,
+    "steps": [
+      {
+        "pattern": "SINGLE_TARGET",
+        "fx": "res://effects/scenes/hypnosis.tscn",
+        "effects": [
+          {
+            "type": "DAMAGE",
+            "ratio": 0.5
+          },
+          {
+            "type": "STUN",
+            "dur": 2.5
+          }
+        ]
+      }
+    ]
+  },
+  "shadow_ball": {
+    "name": "Ball'Ombre",
+    "cost": 80,
+    "desc": "Sphère d'ombre (260%) qui réduit les défenses de la cible de 30% (5s).",
+    "cast_time": 0.6,
+    "steps": [
+      {
+        "pattern": "PROJECTILE",
+        "fx": "res://effects/scenes/shadow_ball.tscn",
+        "effects": [
+          {
+            "type": "DAMAGE",
+            "ratio": 2.6
+          },
+          {
+            "type": "DEBUFF",
+            "mods": {
+              "def_pct": -0.3,
+              "speDef_pct": -0.3
+            },
+            "dur": 5.0
+          }
+        ]
+      }
+    ]
+  },
+  "flamethrower": {
+    "name": "Lance-Flammes",
+    "cost": 90,
+    "desc": "EXEMPLE : cône de flammes (160%) qui brûle.",
+    "cast_time": 0.6,
+    "steps": [
+      {
+        "pattern": "CONE",
+        "radius": 3.0,
+        "angle": 50,
+        "fx": "res://effects/scenes/flamethrower.tscn",
+        "effects": [
+          {
+            "type": "DAMAGE",
+            "ratio": 1.6
+          },
+          {
+            "type": "BURN",
+            "pct": 0.02,
+            "dur": 3.0
+          }
+        ]
+      }
+    ]
+  },
+  "ember": {
+    "name": "Flammèche",
+    "cost": 50,
+    "desc": "EXEMPLE : un petit projectile de flamme (200%) qui brûle.",
+    "cast_time": 0.6,
+    "steps": [
+      {
+        "pattern": "PROJECTILE",
+        "fx": "res://effects/scenes/ember.tscn",
+        "effects": [
+          {
+            "type": "DAMAGE",
+            "ratio": 2.0
+          },
+          {
+            "type": "BURN",
+            "pct": 0.02,
+            "dur": 3.0
+          }
+        ]
+      }
+    ]
+  },
+  "razor_leaf": {
+    "name": "Tranch'Herbe",
+    "cost": 60,
+    "desc": "EXEMPLE : 3 feuilles tranchantes (120% chacune).",
+    "cast_time": 0.6,
+    "steps": [
+      {
+        "pattern": "MULTI_RANDOM",
+        "count": 3,
+        "stagger": 0.1,
+        "fx": "res://effects/scenes/razor_leaf.tscn",
+        "effects": [
+          {
+            "type": "DAMAGE",
+            "ratio": 1.2
+          }
+        ]
+      }
+    ]
+  }
+}

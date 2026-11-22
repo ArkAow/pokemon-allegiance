@@ -1,0 +1,96 @@
+{
+  "oran_berry": {
+    "name": "Baie Oran",
+    "mods": {
+      "hp_pct": 0.15
+    },
+    "desc": "+15% PV max",
+    "flavor": "Une baie sucrée cueillie dans les haies du royaume."
+  },
+  "leftovers": {
+    "name": "Restes",
+    "mods": {
+      "regen_pct": 0.015
+    },
+    "desc": "régén. 1.5% PV max/s",
+    "flavor": "Le pain du dernier banquet. Toujours mangeable."
+  },
+  "life_orb": {
+    "name": "Orbe Vie",
+    "mods": {
+      "atk_pct": 0.2,
+      "speAtk_pct": 0.2,
+      "lifesteal": 0.08
+    },
+    "desc": "+20% Attaque, +20% Att. Spé, vol de vie 8%",
+    "flavor": "Une sphère vibrante, volée à un alchimiste."
+  },
+  "focus_band": {
+    "name": "Bandeau Focus",
+    "mods": {
+      "shield_start": 0.2
+    },
+    "desc": "bouclier de départ 20% PV max",
+    "flavor": "Noué avant chaque mêlée par les vieux guerriers."
+  },
+  "scope_lens": {
+    "name": "Lentille Scope",
+    "mods": {
+      "crit_chance": 0.2,
+      "crit_mult": 0.25
+    },
+    "desc": "20% chances de critique, +25% dégâts critiques",
+    "flavor": "Permet de viser les failles d'une armure."
+  },
+  "choice_scarf": {
+    "name": "Écharpe Choix",
+    "mods": {
+      "aspd_pct": 0.25,
+      "move_pct": 0.15
+    },
+    "desc": "+25% vitesse d'attaque, +15% vitesse de déplacement",
+    "flavor": "Tissée par les éclaireurs des plaines."
+  },
+  "rocky_helmet": {
+    "name": "Casque Brut",
+    "mods": {
+      "thorns": 0.2,
+      "def_pct": 0.1
+    },
+    "desc": "renvoie 20% des dégâts, +10% Défense",
+    "flavor": "Hérissé de pointes forgées à la hâte."
+  },
+  "shell_bell": {
+    "name": "Grelot Coque",
+    "mods": {
+      "lifesteal": 0.15
+    },
+    "desc": "vol de vie 15%",
+    "flavor": "Son tintement redonne vigueur aux blessés."
+  },
+  "wise_glasses": {
+    "name": "Bésicles Sage",
+    "mods": {
+      "ability_power_pct": 0.3
+    },
+    "desc": "+30% puissance des capacités",
+    "flavor": "Les érudits y voient plus loin que les autres."
+  },
+  "mana_gem": {
+    "name": "Gemme d'Énergie",
+    "mods": {
+      "energy_start": 30,
+      "energy_per_sec": 1.5
+    },
+    "desc": "+30 énergie de départ, +1.5 énergie/s",
+    "flavor": "Une gemme qui pulse au rythme du combat."
+  },
+  "king_rock": {
+    "name": "Roche Royale",
+    "mods": {
+      "slow_on_hit": 0.3
+    },
+    "desc": "ralentit de 30% (2s)",
+    "flavor": "Un caillou lourd de sens et de poids."
+  }
+}

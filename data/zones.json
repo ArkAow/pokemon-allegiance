@@ -1,0 +1,28 @@
+{
+  "meadow": {
+	"name": "Prairie",
+	"pool": [
+	  "16",
+	  "43",
+	  "25",
+	  "74"
+	],
+	"level_range": [
+	  3,
+	  6
+	]
+  },
+  "forest": {
+	"name": "Forêt",
+	"pool": [
+	  "43",
+	  "44",
+	  "92",
+	  "63"
+	],
+	"level_range": [
+	  8,
+	  14
+	]
+  }
+}

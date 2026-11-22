@@ -1,0 +1,433 @@
+{
+  "poke_ball": {
+    "name": "Poké Ball",
+    "desc": "Capture un Pokémon sauvage. Plus il est blessé, plus c'est facile.",
+    "glyph": "●",
+    "color": "#e63946",
+    "targeting": "enemy",
+    "cooldown": 1.5,
+    "consumable": true,
+    "steps": [
+      {
+        "pattern": "SINGLE_TARGET",
+        "fx": "res://effects/scenes/capture_ball.tscn",
+        "color": "#e63946",
+        "effects": [
+          {
+            "type": "CAPTURE",
+            "ball": 1.0
+          }
+        ]
+      }
+    ],
+    "wild_only": true
+  },
+  "great_ball": {
+    "name": "Super Ball",
+    "desc": "Capture un Pokémon sauvage (x1,7 par rapport à la Poké Ball).",
+    "glyph": "●",
+    "color": "#3a86ff",
+    "targeting": "enemy",
+    "cooldown": 1.5,
+    "consumable": true,
+    "steps": [
+      {
+        "pattern": "SINGLE_TARGET",
+        "fx": "res://effects/scenes/capture_ball.tscn",
+        "color": "#3a86ff",
+        "effects": [
+          {
+            "type": "CAPTURE",
+            "ball": 1.7
+          }
+        ]
+      }
+    ],
+    "wild_only": true
+  },
+  "ultra_ball": {
+    "name": "Hyper Ball",
+    "desc": "Capture un Pokémon sauvage (x2,6 par rapport à la Poké Ball).",
+    "glyph": "●",
+    "color": "#ffd166",
+    "targeting": "enemy",
+    "cooldown": 1.5,
+    "consumable": true,
+    "steps": [
+      {
+        "pattern": "SINGLE_TARGET",
+        "fx": "res://effects/scenes/capture_ball.tscn",
+        "color": "#ffd166",
+        "effects": [
+          {
+            "type": "CAPTURE",
+            "ball": 2.6
+          }
+        ]
+      }
+    ],
+    "wild_only": true
+  },
+  "potion": {
+    "name": "Potion",
+    "desc": "Soigne un allié de 35% de ses PV max.",
+    "glyph": "+",
+    "color": "#7be08a",
+    "targeting": "ally",
+    "cooldown": 6,
+    "consumable": true,
+    "steps": [
+      {
+        "pattern": "SINGLE_TARGET",
+        "fx": "res://effects/scenes/heal_aura.tscn",
+        "effects": [
+          {
+            "type": "HEAL",
+            "pct": 0.35
+          }
+        ]
+      }
+    ]
+  },
+  "super_potion": {
+    "name": "Super Potion",
+    "desc": "Soigne un allié de 60% de ses PV max.",
+    "glyph": "+",
+    "color": "#38d39f",
+    "targeting": "ally",
+    "cooldown": 8,
+    "consumable": true,
+    "steps": [
+      {
+        "pattern": "SINGLE_TARGET",
+        "fx": "res://effects/scenes/heal_aura.tscn",
+        "effects": [
+          {
+            "type": "HEAL",
+            "pct": 0.6
+          }
+        ]
+      }
+    ]
+  },
+  "full_heal": {
+    "name": "Total Soin",
+    "desc": "Soigne toute l'équipe de 20% et retire les statuts négatifs.",
+    "glyph": "+",
+    "color": "#b5ead7",
+    "targeting": "none",
+    "cooldown": 10,
+    "consumable": true,
+    "steps": [
+      {
+        "pattern": "ALLIES_ALL",
+        "fx": "res://effects/scenes/heal_aura.tscn",
+        "effects": [
+          {
+            "type": "HEAL",
+            "pct": 0.2
+          },
+          {
+            "type": "CLEANSE"
+          }
+        ]
+      }
+    ]
+  },
+  "fire_bomb": {
+    "name": "Bombe Flamme",
+    "desc": "Explose à l'endroit choisi : dégâts de zone et brûlure.",
+    "glyph": "!",
+    "color": "#ff8a3d",
+    "targeting": "point",
+    "cooldown": 8,
+    "consumable": true,
+    "steps": [
+      {
+        "pattern": "GROUND_CIRCLE",
+        "radius": 1.5,
+        "team": "enemies",
+        "fx": "res://effects/scenes/bomb_blast.tscn",
+        "effects": [
+          {
+            "type": "DAMAGE",
+            "ratio": 2.5
+          },
+          {
+            "type": "BURN",
+            "pct": 0.02,
+            "dur": 3.0
+          }
+        ]
+      }
+    ]
+  },
+  "thunder_stone": {
+    "name": "Pierre Foudre",
+    "desc": "Foudroie un ennemi (dégâts) et l'étourdit 1,5s.",
+    "glyph": "!",
+    "color": "#ffe066",
+    "targeting": "enemy",
+    "cooldown": 8,
+    "consumable": true,
+    "steps": [
+      {
+        "pattern": "SINGLE_TARGET",
+        "fx": "res://effects/scenes/thunderbolt.tscn",
+        "effects": [
+          {
+            "type": "DAMAGE",
+            "ratio": 3.0
+          },
+          {
+            "type": "STUN",
+            "dur": 1.5
+          }
+        ]
+      }
+    ]
+  },
+  "smoke_bomb": {
+    "name": "Bombe Fumigène",
+    "desc": "Zone au sol : ralentit (40%) et affaiblit les attaques ennemies (-25%, 6s).",
+    "glyph": "↓",
+    "color": "#9aa5b1",
+    "targeting": "point",
+    "cooldown": 10,
+    "consumable": true,
+    "steps": [
+      {
+        "pattern": "GROUND_CIRCLE",
+        "radius": 2.0,
+        "team": "enemies",
+        "fx": "res://effects/scenes/smoke_bomb.tscn",
+        "effects": [
+          {
+            "type": "SLOW",
+            "amount": 0.4,
+            "dur": 6.0
+          },
+          {
+            "type": "DEBUFF",
+            "mods": {
+              "atk_pct": -0.25,
+              "speAtk_pct": -0.25
+            },
+            "dur": 6.0
+          }
+        ]
+      }
+    ]
+  },
+  "x_attack": {
+    "name": "X-Attaque",
+    "desc": "Un allié gagne +40% d'attaque (8s).",
+    "glyph": "↑",
+    "color": "#ff6b6b",
+    "targeting": "ally",
+    "cooldown": 10,
+    "consumable": true,
+    "steps": [
+      {
+        "pattern": "SINGLE_TARGET",
+        "fx": "res://effects/scenes/default_aura.tscn",
+        "color": "#ff6b6b",
+        "effects": [
+          {
+            "type": "BUFF",
+            "mods": {
+              "atk_pct": 0.4,
+              "speAtk_pct": 0.4
+            },
+            "dur": 8.0
+          }
+        ]
+      }
+    ]
+  },
+  "x_speed": {
+    "name": "X-Vitesse",
+    "desc": "Toute l'équipe gagne +30% de vitesse d'attaque (6s).",
+    "glyph": "↑",
+    "color": "#74c0fc",
+    "targeting": "none",
+    "cooldown": 12,
+    "consumable": true,
+    "steps": [
+      {
+        "pattern": "ALLIES_ALL",
+        "fx": "res://effects/scenes/wind_aura.tscn",
+        "effects": [
+          {
+            "type": "BUFF",
+            "mods": {
+              "aspd_pct": 0.3
+            },
+            "dur": 6.0
+          }
+        ]
+      }
+    ]
+  },
+  "x_defend": {
+    "name": "X-Défense",
+    "desc": "Un allié reçoit un bouclier de 35% PV max et +30% de défenses (6s).",
+    "glyph": "▲",
+    "color": "#a5d8ff",
+    "targeting": "ally",
+    "cooldown": 10,
+    "consumable": true,
+    "steps": [
+      {
+        "pattern": "SINGLE_TARGET",
+        "fx": "res://effects/scenes/shield_dome.tscn",
+        "effects": [
+          {
+            "type": "SHIELD",
+            "pct": 0.35,
+            "dur": 6.0
+          },
+          {
+            "type": "BUFF",
+            "mods": {
+              "def_pct": 0.3,
+              "speDef_pct": 0.3
+            },
+            "dur": 6.0
+          }
+        ]
+      }
+    ]
+  },
+  "energy_drink": {
+    "name": "Boisson Énergie",
+    "desc": "Un allié gagne 60 d'énergie : sa capacité part plus vite.",
+    "glyph": "★",
+    "color": "#ffd43b",
+    "targeting": "ally",
+    "cooldown": 10,
+    "consumable": true,
+    "steps": [
+      {
+        "pattern": "SINGLE_TARGET",
+        "fx": "res://effects/scenes/default_aura.tscn",
+        "color": "#ffd43b",
+        "effects": [
+          {
+            "type": "GAIN_ENERGY",
+            "amount": 60
+          }
+        ]
+      }
+    ]
+  },
+  "trap_net": {
+    "name": "Filet",
+    "desc": "Immobilise un ennemi pendant 3s.",
+    "glyph": "■",
+    "color": "#c8b6ff",
+    "targeting": "enemy",
+    "cooldown": 12,
+    "consumable": true,
+    "steps": [
+      {
+        "pattern": "SINGLE_TARGET",
+        "fx": "res://effects/scenes/sleep_cloud.tscn",
+        "color": "#c8b6ff",
+        "effects": [
+          {
+            "type": "STUN",
+            "dur": 3.0
+          }
+        ]
+      }
+    ]
+  },
+  "heal_song": {
+    "name": "Chant Apaisant",
+    "desc": "Zone au sol : soigne les alliés présents de 25%.",
+    "glyph": "♪",
+    "color": "#69db7c",
+    "targeting": "point",
+    "cooldown": 14,
+    "consumable": false,
+    "steps": [
+      {
+        "pattern": "GROUND_CIRCLE",
+        "radius": 2.0,
+        "team": "allies",
+        "fx": "res://effects/scenes/heal_zone.tscn",
+        "effects": [
+          {
+            "type": "HEAL",
+            "pct": 0.25
+          }
+        ]
+      }
+    ],
+    "charges": 2
+  },
+  "swap_whistle": {
+    "name": "Sifflet de Permutation",
+    "desc": "Échange la place de deux alliés (choisis-en deux).",
+    "glyph": "⇄",
+    "color": "#4dabf7",
+    "targeting": "ally_ally",
+    "cooldown": 5,
+    "consumable": false,
+    "steps": [
+      {
+        "pattern": "SWAP",
+        "fx": "res://effects/scenes/teleport.tscn",
+        "color": "#4dabf7",
+        "effects": []
+      }
+    ],
+    "charges": 3
+  },
+  "warp_whistle": {
+    "name": "Sifflet de Renfort",
+    "desc": "Téléporte un allié à l'endroit choisi.",
+    "glyph": "→",
+    "color": "#da77f2",
+    "targeting": "ally_point",
+    "cooldown": 5,
+    "consumable": false,
+    "steps": [
+      {
+        "pattern": "MOVE_TARGET",
+        "fx": "res://effects/scenes/teleport.tscn",
+        "color": "#da77f2",
+        "effects": []
+      }
+    ],
+    "charges": 3
+  },
+  "rally_cry": {
+    "name": "Cri de Guerre",
+    "desc": "Toute l'équipe gagne +25% d'attaque (8s).",
+    "glyph": "▲",
+    "color": "#ff922b",
+    "targeting": "none",
+    "cooldown": 20,
+    "consumable": false,
+    "steps": [
+      {
+        "pattern": "ALLIES_ALL",
+        "fx": "res://effects/scenes/default_aura.tscn",
+        "color": "#ff922b",
+        "effects": [
+          {
+            "type": "BUFF",
+            "mods": {
+              "atk_pct": 0.25,
+              "speAtk_pct": 0.25
+            },
+            "dur": 8.0
+          }
+        ]
+      }
+    ],
+    "charges": 1
+  }
+}

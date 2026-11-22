@@ -52,7 +52,6 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="Theme" id="Theme_qq3yp"]
-default_font_size = 20
 Button/styles/disabled = SubResource("StyleBoxFlat_spyqn")
 Button/styles/focus = SubResource("StyleBoxFlat_ri4m3")
 Button/styles/hover = SubResource("StyleBoxFlat_e0njw")
@@ -117,7 +116,10 @@ scroll_active = false
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 40
 text = "Dialogue..."
+seconds_per_step = 0.04
+seconds_per_pause_step = 0.6
 
 [node name="Responses" type="MarginContainer" parent="Balloon"]
 layout_mode = 1

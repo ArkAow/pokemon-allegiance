@@ -1,0 +1,139 @@
+{
+  "tutorial_rival": {
+    "name": "Soldat fanfaron",
+    "enemies": [
+      {
+        "species": "16",
+        "level": 4,
+        "cell": [
+          2,
+          2
+        ]
+      },
+      {
+        "species": "74",
+        "level": 4,
+        "cell": [
+          4,
+          1
+        ]
+      },
+      {
+        "species": "43",
+        "level": 4,
+        "cell": [
+          3,
+          3
+        ]
+      }
+    ],
+    "gold": 25,
+    "items": [
+      "leftovers"
+    ],
+    "once_flag": "beat_tutorial_rival",
+    "trainer_items": [
+      "super_potion",
+      "great_ball"
+    ]
+  },
+  "route_scout": {
+    "name": "Éclaireur de route",
+    "enemies": [
+      {
+        "species": "16",
+        "level": 6,
+        "cell": [
+          1,
+          2
+        ]
+      },
+      {
+        "species": "74",
+        "level": 6,
+        "cell": [
+          3,
+          1
+        ]
+      },
+      {
+        "species": "25",
+        "level": 7,
+        "cell": [
+          5,
+          2
+        ]
+      },
+      {
+        "species": "43",
+        "level": 6,
+        "cell": [
+          3,
+          3
+        ]
+      }
+    ],
+    "gold": 40,
+    "items": [
+      "scope_lens"
+    ],
+    "trainer_items": [
+      "fire_bomb"
+    ],
+    "once_flag": "beat_route_scout"
+  },
+  "forest_hunter": {
+    "name": "Chasseur de la forêt",
+    "enemies": [
+      {
+        "species": "43",
+        "level": 12,
+        "cell": [
+          1,
+          1
+        ]
+      },
+      {
+        "species": "44",
+        "level": 13,
+        "cell": [
+          3,
+          0
+        ]
+      },
+      {
+        "species": "92",
+        "level": 12,
+        "cell": [
+          5,
+          1
+        ]
+      },
+      {
+        "species": "63",
+        "level": 12,
+        "cell": [
+          2,
+          3
+        ]
+      },
+      {
+        "species": "74",
+        "level": 12,
+        "cell": [
+          4,
+          3
+        ]
+      }
+    ],
+    "gold": 90,
+    "items": [
+      "life_orb"
+    ],
+    "trainer_items": [
+      "ultra_ball",
+      "x_speed"
+    ],
+    "once_flag": "beat_forest_hunter"
+  }
+}

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://effects/scripts/fx_aura.gd" id="1_fx"]
+
+[node name="SleepCloud" type="Node2D"]
+script = ExtResource("1_fx")
+style = "sleep"
+color = Color(0.75, 0.5, 0.9, 1)

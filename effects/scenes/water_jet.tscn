@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://effects/scripts/fx_projectile.gd" id="1_fx"]
+
+[node name="WaterJet" type="Node2D"]
+script = ExtResource("1_fx")
+style = "water"
+color = Color(0.35, 0.65, 1, 1)
+speed = 760.0

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://effects/scripts/fx_aura.gd" id="1_fx"]
+
+[node name="DefaultAura" type="Node2D"]
+script = ExtResource("1_fx")
+style = "buff"
+color = Color(1, 0.8, 0.3, 1)
