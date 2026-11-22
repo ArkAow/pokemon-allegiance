@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""Importe des sprites PMD (zips PMDCollab/SpriteCollab ou dossiers déjà extraits) dans assets/pokemons/<nom>/ (sans les fiches Shadow).
-
-Usage (depuis la racine du projet) :
+"""
+Usage:
     python tools/import_pmd.py sprite_imports/bulbasaur_sprite.zip sprite_imports/charmander_sprite.zip
-    python tools/import_pmd.py sprite_imports            # tous les zips du dossier
-Le nom du dossier créé = nom du zip sans "_sprite", en minuscules (doit correspondre au champ "en" du pokédex).
+    python tools/import_pmd.py sprite_imports
+Le nom du dossier créé = nom du zip sans "_sprite" en minuscules ("en" du pokédex).
 """
 import sys, zipfile, shutil
 from pathlib import Path
@@ -12,17 +11,15 @@ from pathlib import Path
 DEST = Path("assets/pokemons")
 
 def keep(name: str) -> bool:
-    # Seulement AnimData.xml et les *-Anim.png : les fiches -Shadow / -Offsets ne sont pas importées.
     return name == "AnimData.xml" or (name.endswith("-Anim.png") and "-Shadow" not in name)
 
 
 def clean_shadows():
-    """Supprime les *-Shadow* / *-Offsets* déjà présents dans assets/pokemons/*/."""
     n = 0
     for f in list(DEST.glob("*/*-Shadow*")) + list(DEST.glob("*/*-Offsets*")):
         f.unlink(); n += 1
     if n:
-        print(f"{n} fichier(s) -Shadow/-Offsets supprimé(s)")
+        print(f"{n} fichier(s) -Shadow/-Offsets suppr")
 
 def from_zip(z: Path):
     name = z.stem.lower().replace("_sprite", "").replace("-sprite", "").replace(" ", "_")

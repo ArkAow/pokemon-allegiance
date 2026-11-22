@@ -39,9 +39,9 @@ func _new_game() -> void:
 	items.clear()
 	flags.clear()
 	gold = 0
-	var starter: PokemonInstance = add_pokemon("1", 5)
+	var starter: PokemonInstance = add_pokemon("1", 10)
 	starter.cell = Vector2i(3, 6)
-	var second: PokemonInstance = add_pokemon("4", 5)
+	var second: PokemonInstance = add_pokemon("4", 10)
 	second.cell = Vector2i(2, 6)
 	give_item("oran_berry", 2)
 	give_item("scope_lens", 1)

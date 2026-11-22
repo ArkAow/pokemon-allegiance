@@ -1,16 +1,5 @@
 @tool
 extends EditorScript
-## OUTIL ÉDITEUR — importe des sprites PMD (PMDCollab / SpriteCollab) en un clic.
-##
-## MODE D'EMPLOI
-##   1. Télécharge les zips de sprites (ex : bulbasaur_sprite.zip) et dépose-les dans  res://sprite_imports/
-##   2. Ouvre CE fichier dans l'éditeur de script de Godot, puis menu  Fichier > Exécuter  (Ctrl+Maj+X).
-##   3. C'est tout : chaque zip est extrait dans  res://assets/pokemons/<nom>/  (nom = nom du zip sans "_sprite").
-##      Seuls les fichiers utiles sont gardés : AnimData.xml et les *-Anim.png
-##      (les fiches *-Shadow.png, *-Offsets.png, etc. sont IGNORÉES, et celles déjà présentes sont SUPPRIMÉES).
-##   4. Vérifie que le pokédex (data/pokedex.json) contient bien  "en": "<nom>"  pour ce Pokémon.
-##
-## Alternative hors Godot : python tools/import_pmd.py  (même résultat).
 
 const SRC_DIR := "res://sprite_imports"
 const DEST_DIR := "res://assets/pokemons"
@@ -58,7 +47,6 @@ func _extract(zip_path: String, dest: String) -> int:
 	return n
 
 
-## Supprime tous les "*-Shadow.png" (et leur .import) déjà présents dans assets/pokemons/<nom>/.
 func _remove_shadow_files(root: String) -> void:
 	var removed: int = 0
 	var rd := DirAccess.open(root)
@@ -73,4 +61,4 @@ func _remove_shadow_files(root: String) -> void:
 				d.remove(f)
 				removed += 1
 	if removed > 0:
-		print("[PMD] ", removed, " fichier(s) -Shadow/-Offsets supprimé(s).")
+		print("[PMD] ", removed, " fichier(s) -Shadow/-Offsets suppr")
