@@ -1,0 +1,22 @@
+{
+  "name": "Abra",
+  "types": [
+    "psychic"
+  ],
+  "base": {
+    "hp": 25,
+    "atk": 20,
+    "def": 15,
+    "speAtk": 105,
+    "speDef": 55,
+    "spd": 90
+  },
+  "attack_kind": "special",
+  "range": 4,
+  "ability": "teleport",
+  "evolves_to": {
+    "id": "64",
+    "level": 16
+  },
+  "catch_rate": 0.55
+}

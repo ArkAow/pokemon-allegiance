@@ -1,0 +1,22 @@
+{
+  "name": "Salamèche",
+  "types": [
+    "fire"
+  ],
+  "base": {
+    "hp": 39,
+    "atk": 52,
+    "def": 43,
+    "speAtk": 60,
+    "speDef": 50,
+    "spd": 65
+  },
+  "attack_kind": "physical",
+  "range": 1,
+  "ability": "fire_fang",
+  "evolves_to": {
+    "id": "5",
+    "level": 16
+  },
+  "catch_rate": 0.55
+}

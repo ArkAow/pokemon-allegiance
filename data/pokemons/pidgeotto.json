@@ -1,0 +1,19 @@
+{
+  "name": "Roucoups",
+  "types": [
+    "normal",
+    "flying"
+  ],
+  "base": {
+    "hp": 63,
+    "atk": 60,
+    "def": 55,
+    "speAtk": 50,
+    "speDef": 50,
+    "spd": 71
+  },
+  "attack_kind": "physical",
+  "range": 2,
+  "ability": "tailwind",
+  "catch_rate": 0.4
+}

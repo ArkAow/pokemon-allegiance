@@ -1,0 +1,18 @@
+{
+  "name": "Machoc",
+  "types": [
+    "fighting"
+  ],
+  "base": {
+    "hp": 70,
+    "atk": 80,
+    "def": 50,
+    "speAtk": 35,
+    "speDef": 35,
+    "spd": 35
+  },
+  "attack_kind": "physical",
+  "range": 1,
+  "ability": "karate_chop",
+  "catch_rate": 0.55
+}

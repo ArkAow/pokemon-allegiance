@@ -1,0 +1,19 @@
+{
+  "name": "Florizarre",
+  "types": [
+    "grass",
+    "poison"
+  ],
+  "base": {
+    "hp": 80,
+    "atk": 82,
+    "def": 83,
+    "speAtk": 100,
+    "speDef": 100,
+    "spd": 80
+  },
+  "attack_kind": "special",
+  "range": 3,
+  "ability": "solar_beam",
+  "catch_rate": 0.4
+}

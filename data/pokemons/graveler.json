@@ -1,0 +1,19 @@
+{
+  "name": "Gravalanche",
+  "types": [
+    "rock",
+    "ground"
+  ],
+  "base": {
+    "hp": 55,
+    "atk": 95,
+    "def": 115,
+    "speAtk": 45,
+    "speDef": 45,
+    "spd": 35
+  },
+  "attack_kind": "physical",
+  "range": 1,
+  "ability": "quake",
+  "catch_rate": 0.4
+}

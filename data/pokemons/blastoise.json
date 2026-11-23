@@ -1,0 +1,18 @@
+{
+  "name": "Tortank",
+  "types": [
+    "water"
+  ],
+  "base": {
+    "hp": 79,
+    "atk": 83,
+    "def": 100,
+    "speAtk": 85,
+    "speDef": 105,
+    "spd": 78
+  },
+  "attack_kind": "special",
+  "range": 4,
+  "ability": "barrage",
+  "catch_rate": 0.4
+}

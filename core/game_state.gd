@@ -310,7 +310,7 @@ func _input(event: InputEvent) -> void:
 	elif DEBUG_KEYS and event is InputEventKey and event.pressed and not event.echo:
 		match event.keycode:
 			KEY_F9:
-				add_pokemon(str(GlobalData.pokemon_data.keys().pick_random()), randi_range(3, 12))
+				add_pokemon(str(GlobalData.species_ids().pick_random()), randi_range(3, 12))
 			KEY_F10:
 				for id in GlobalData.items_data:
 					give_item(str(id))

@@ -1,0 +1,22 @@
+{
+  "name": "Reptincel",
+  "types": [
+    "fire"
+  ],
+  "base": {
+    "hp": 58,
+    "atk": 64,
+    "def": 58,
+    "speAtk": 80,
+    "speDef": 65,
+    "spd": 80
+  },
+  "attack_kind": "physical",
+  "range": 1,
+  "ability": "fire_spin",
+  "evolves_to": {
+    "id": "6",
+    "level": 36
+  },
+  "catch_rate": 0.55
+}

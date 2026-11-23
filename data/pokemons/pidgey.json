@@ -1,0 +1,23 @@
+{
+  "name": "Roucool",
+  "types": [
+    "normal",
+    "flying"
+  ],
+  "base": {
+    "hp": 40,
+    "atk": 45,
+    "def": 40,
+    "speAtk": 35,
+    "speDef": 35,
+    "spd": 56
+  },
+  "attack_kind": "physical",
+  "range": 1,
+  "ability": "quick_attack",
+  "evolves_to": {
+    "id": "17",
+    "level": 18
+  },
+  "catch_rate": 0.55
+}

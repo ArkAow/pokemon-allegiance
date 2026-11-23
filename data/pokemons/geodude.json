@@ -1,0 +1,23 @@
+{
+  "name": "Racaillou",
+  "types": [
+    "rock",
+    "ground"
+  ],
+  "base": {
+    "hp": 40,
+    "atk": 80,
+    "def": 100,
+    "speAtk": 30,
+    "speDef": 30,
+    "spd": 20
+  },
+  "attack_kind": "physical",
+  "range": 1,
+  "ability": "rollout",
+  "evolves_to": {
+    "id": "75",
+    "level": 25
+  },
+  "catch_rate": 0.55
+}

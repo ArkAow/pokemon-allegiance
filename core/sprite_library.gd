@@ -154,7 +154,7 @@ static func _build(species_id: String) -> Entry:
 	else:
 		var dir: String = str(cfg.get("dir", ""))
 		if dir == "":
-			dir = str(species.get("en", "")).to_lower()
+			dir = str(species.get("slug", "")).to_lower()
 		if dir != "":
 			if not dir.begins_with("res://"):
 				dir = SPRITE_ROOT + dir

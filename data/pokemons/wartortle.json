@@ -1,0 +1,22 @@
+{
+  "name": "Carabaffe",
+  "types": [
+    "water"
+  ],
+  "base": {
+    "hp": 59,
+    "atk": 63,
+    "def": 80,
+    "speAtk": 65,
+    "speDef": 80,
+    "spd": 58
+  },
+  "attack_kind": "special",
+  "range": 2,
+  "ability": "tidal_wave",
+  "evolves_to": {
+    "id": "9",
+    "level": 36
+  },
+  "catch_rate": 0.55
+}

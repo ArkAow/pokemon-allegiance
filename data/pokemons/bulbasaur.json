@@ -1,0 +1,23 @@
+{
+  "name": "Bulbizarre",
+  "types": [
+    "grass",
+    "poison"
+  ],
+  "base": {
+    "hp": 45,
+    "atk": 49,
+    "def": 49,
+    "speAtk": 65,
+    "speDef": 65,
+    "spd": 45
+  },
+  "attack_kind": "special",
+  "range": 2,
+  "ability": "vine_whip",
+  "evolves_to": {
+    "id": "2",
+    "level": 16
+  },
+  "catch_rate": 0.55
+}

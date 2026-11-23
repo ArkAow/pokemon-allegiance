@@ -1,0 +1,23 @@
+{
+  "name": "Herbizarre",
+  "types": [
+    "grass",
+    "poison"
+  ],
+  "base": {
+    "hp": 60,
+    "atk": 62,
+    "def": 63,
+    "speAtk": 80,
+    "speDef": 80,
+    "spd": 60
+  },
+  "attack_kind": "special",
+  "range": 3,
+  "ability": "synthesis",
+  "evolves_to": {
+    "id": "3",
+    "level": 32
+  },
+  "catch_rate": 0.55
+}

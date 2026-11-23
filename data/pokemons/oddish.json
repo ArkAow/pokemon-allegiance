@@ -1,0 +1,23 @@
+{
+  "name": "Mystherbe",
+  "types": [
+    "grass",
+    "poison"
+  ],
+  "base": {
+    "hp": 45,
+    "atk": 50,
+    "def": 55,
+    "speAtk": 75,
+    "speDef": 65,
+    "spd": 30
+  },
+  "attack_kind": "special",
+  "range": 3,
+  "ability": "sleep_powder",
+  "evolves_to": {
+    "id": "44",
+    "level": 21
+  },
+  "catch_rate": 0.55
+}

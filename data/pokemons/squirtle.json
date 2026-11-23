@@ -1,0 +1,22 @@
+{
+  "name": "Carapuce",
+  "types": [
+    "water"
+  ],
+  "base": {
+    "hp": 44,
+    "atk": 48,
+    "def": 65,
+    "speAtk": 50,
+    "speDef": 64,
+    "spd": 43
+  },
+  "attack_kind": "physical",
+  "range": 1,
+  "ability": "withdraw",
+  "evolves_to": {
+    "id": "8",
+    "level": 16
+  },
+  "catch_rate": 0.55
+}

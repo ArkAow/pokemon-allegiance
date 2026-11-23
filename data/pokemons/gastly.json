@@ -1,0 +1,23 @@
+{
+  "name": "Fantominus",
+  "types": [
+    "ghost",
+    "poison"
+  ],
+  "base": {
+    "hp": 30,
+    "atk": 35,
+    "def": 30,
+    "speAtk": 100,
+    "speDef": 35,
+    "spd": 80
+  },
+  "attack_kind": "special",
+  "range": 3,
+  "ability": "hypnosis",
+  "evolves_to": {
+    "id": "93",
+    "level": 25
+  },
+  "catch_rate": 0.55
+}
